@@ -31,12 +31,12 @@
       <div class="col-lg-8 mb-4 mb-lg-0">
         <div class="d-flex align-items-center">
           <div class="border p-2 d-inline-block mr-3 rounded">
-            <img src="{{ job.url }}" style="max-height: 400px; max-width: 400px;" alt="Image">
+            <img src="{{ job.picture.url }}" style="max-height: 400px; max-width: 400px;" alt="Image">
           </div>
           <div>
             <h2>{{ job.title }}</h2>
             <div>
-              <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span><a href="{{ job.url }}">{{ job.company_name }}</a></span>
+              <span class="ml-0 mr-2 mb-2"><span class="icon-briefcase mr-2"></span><a href="{{ job.url }}">{{ job.title }}</a></span>
               <span class="m-2"><span class="icon-room mr-2"></span>{{ job.location }}</span>
               <span class="m-2"><span class="icon-clock-o mr-2"></span>
                 <span class="text-primary">
@@ -97,7 +97,7 @@
             
           {% elif request.user.id == job.user.id and user.role == 'employer' %}
 
-          <a href="{% url 'shoppingapp:edit-job' job.id %}" class="btn btn-block btn-light btn-md">Edit</a>
+          <a href="{% url 'shoppingapp:edit-shop' job.id %}" class="btn btn-block btn-light btn-md">Edit</a>
            {% else %}
               
             {% endif %}

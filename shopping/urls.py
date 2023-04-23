@@ -23,3 +23,7 @@ urlpatterns = [
     path('__debug__/', include('debug_toolbar.urls')),
 
 ]
+
+admin.site.site_header = "Shopping Mall Admin"
+admin.site.site_title = "Shopping Admin Portal"
+admin.site.index_title = "Welcome to Shopping Mall Portal"

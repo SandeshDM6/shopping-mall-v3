@@ -35,15 +35,16 @@ class Job(models.Model):
     job_type = models.CharField(choices=JOB_TYPE, max_length=1, verbose_name="Shop Type")
     category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE)
     salary = models.CharField(max_length=30, blank=True, verbose_name="Avg Spend")
-    company_name = models.CharField(max_length=300, verbose_name="Branch Name")
+    company_name = models.CharField(max_length=300, verbose_name="Branch Name", null=True, blank=True)
     company_description = RichTextField(blank=True, null=True, verbose_name="Branch Description")
-    url = models.URLField(max_length=200, verbose_name="Website")
+    url = models.URLField(max_length=200, verbose_name="Logo")
     last_date = models.DateField(verbose_name="Auto Close Date")
     is_published = models.BooleanField(default=False)
     is_closed = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=True)
+    picture = models.ImageField(upload_to='images/',null=True)
     
-
+    exclude = ['company_name',]
 
     def __str__(self):
         return self.title

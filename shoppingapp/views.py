@@ -80,7 +80,7 @@ def shop_list_View(request):
 @login_required(login_url=reverse_lazy('account:login'))
 @user_is_employer
 def create_shop_View(request):
-    form = JobForm(request.POST or None)
+    form = JobForm(request.POST or None,request.FILES)
 
     user = get_object_or_404(User, id=request.user.id)
     categories = Category.objects.all()

@@ -19,8 +19,9 @@ class JobForm(forms.ModelForm):
         self.fields['description'].label = "Job Description :"
         self.fields['tags'].label = "Tags :"
         self.fields['last_date'].label = "Submission Deadline :"
-        self.fields['company_name'].label = "Branch Name :"
+        #self.fields['company_name'].label = "Branch Name :"
         self.fields['url'].label = "Logo :"
+
 
 
         self.fields['title'].widget.attrs.update(
@@ -49,11 +50,11 @@ class JobForm(forms.ModelForm):
                 
             }
         )        
-        self.fields['company_name'].widget.attrs.update(
-            {
-                'placeholder': 'Starbucks',
-            }
-        )           
+        # self.fields['company_name'].widget.attrs.update(
+        #     {
+        #         'placeholder': 'Starbucks',
+        #     }
+        # )           
         self.fields['url'].widget.attrs.update(
             {
                 'placeholder': 'Logo',
@@ -71,12 +72,13 @@ class JobForm(forms.ModelForm):
             "job_type",
             "category",
             "salary",
-            "description",
+             "description",
             "tags",
             "last_date",
-            "company_name",
-            "company_description",
-            "url"
+            # "company_name",
+            # "company_description",
+            "url",
+            "picture"
             ]
 
     def clean_job_type(self):
@@ -118,7 +120,7 @@ class JobEditForm(forms.ModelForm):
         self.fields['description'].label = "Store Description :"
         # self.fields['tags'].label = "Tags :"
         self.fields['last_date'].label = "Dead Line :"
-        self.fields['company_name'].label = "Branch Name :"
+        #self.fields['company_name'].label = "Branch Name :"
         self.fields['url'].label = "Website :"
 
 
@@ -142,11 +144,11 @@ class JobEditForm(forms.ModelForm):
                 'placeholder': 'YYYY-MM-DD ',
             }
         )        
-        self.fields['company_name'].widget.attrs.update(
-            {
-                'placeholder': 'Company Name',
-            }
-        )           
+        # self.fields['company_name'].widget.attrs.update(
+        #     {
+        #         'placeholder': 'Company Name',
+        #     }
+        # )           
         self.fields['url'].widget.attrs.update(
             {
                 'placeholder': 'https://example.com',
@@ -170,8 +172,8 @@ class JobEditForm(forms.ModelForm):
             "salary",
             "description",
             "last_date",
-            "company_name",
-            "company_description",
+           # "company_name",
+          #  "company_description",
             "url"
             ]
 
