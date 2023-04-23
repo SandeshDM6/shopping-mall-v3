@@ -136,7 +136,17 @@
             </li>
           </ul>
         </div>
-
+        {% if job.title == name %}
+        <div class="bg-light p-3 border rounded mb-3">
+          <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">SHOP ON SALE</h3>
+         <strong>Shop which is currently occupied by {{ name }} on {{ job.location }} will be on off at {{ percent }}% </strong>
+         <ul class="list-unstyled pl-3 mb-2 mt-3">
+          <li class="mb-2"><strong class="text-black">Current Value:</strong> {{ price }}</li>
+          <li class="mb-2"><strong class="text-black">Discounted Value:</strong> {{ discount }}</li>
+        </ul>
+          <p>Rental agreement is on per anum basis.</p>
+        </div>
+        {% endif %}
         <div class="bg-light p-3 border rounded">
           <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Social Media</h3>
           <div class="px-3">

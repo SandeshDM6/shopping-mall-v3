@@ -44,6 +44,9 @@
               </span>
               {% endif %}</li>
             <li class="badge badge-secondary menu-fix mb-2"> {{ job.location }}</li>
+            {% if job.title == name %}
+            <li class="badge badge-danger menu-fix mb-2"> SHOP ON SALE! </li>
+            {% endif %}
           </ul>
         </a>
       </div>

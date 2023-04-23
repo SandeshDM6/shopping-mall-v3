@@ -14,8 +14,10 @@ from account.models import User
 from shoppingapp.forms import *
 from shoppingapp.models import *
 from shoppingapp.permission import *
+from onsale import sale
 User = get_user_model()
 
+name,discount,percent,price = sale.calculate_discounted_price("CCD", 50000, 50)
 
 def home_view(request):
 
@@ -69,9 +71,15 @@ def shop_list_View(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+    
+
     context = {
 
         'page_obj': page_obj,
+        'name':name,
+        'discount':discount,
+        'percent':percent,
+        'price':price,
 
     }
     return render(request, 'shoppingapp/shop-list.html', context)
@@ -122,7 +130,11 @@ def single_shop_view(request, id):
     context = {
         'job': job,
         'page_obj': page_obj,
-        'total': len(related_job_list)
+        'total': len(related_job_list),
+        'name':name,
+        'discount':discount,
+        'percent':percent,
+        'price':price,
 
     }
     return render(request, 'shoppingapp/shop-single.html', context)
