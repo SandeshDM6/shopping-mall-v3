@@ -32,16 +32,17 @@ class Job(models.Model):
     description = RichTextField()
     tags = TaggableManager()
     location = models.CharField(max_length=300)
-    job_type = models.CharField(choices=JOB_TYPE, max_length=1)
+    job_type = models.CharField(choices=JOB_TYPE, max_length=1, verbose_name="Shop Type")
     category = models.ForeignKey(Category,related_name='Category', on_delete=models.CASCADE)
-    salary = models.CharField(max_length=30, blank=True)
-    company_name = models.CharField(max_length=300)
-    company_description = RichTextField(blank=True, null=True)
-    url = models.URLField(max_length=200)
-    last_date = models.DateField()
+    salary = models.CharField(max_length=30, blank=True, verbose_name="Avg Spend")
+    company_name = models.CharField(max_length=300, verbose_name="Branch Name")
+    company_description = RichTextField(blank=True, null=True, verbose_name="Branch Description")
+    url = models.URLField(max_length=200, verbose_name="Website")
+    last_date = models.DateField(verbose_name="Auto Close Date")
     is_published = models.BooleanField(default=False)
     is_closed = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=True)
+    
 
 
     def __str__(self):

@@ -5,9 +5,7 @@ app_name = "account"
 
 urlpatterns = [
 
-    #path('employee/register/', views.employee_registration, name='employee-registration'),
-    path('manager/register/', views.employer_registration, name='manager-registration'),
-    path('profile/edit/<int:id>/', views.employee_edit_profile, name='edit-profile'),
+
     path('login/', views.user_logIn, name='login'),
     path('logout/', views.user_logOut, name='logout'),
 ]

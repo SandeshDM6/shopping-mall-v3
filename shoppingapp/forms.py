@@ -19,8 +19,8 @@ class JobForm(forms.ModelForm):
         self.fields['description'].label = "Job Description :"
         self.fields['tags'].label = "Tags :"
         self.fields['last_date'].label = "Submission Deadline :"
-        self.fields['company_name'].label = "Company Name :"
-        self.fields['url'].label = "Website :"
+        self.fields['company_name'].label = "Branch Name :"
+        self.fields['url'].label = "Logo :"
 
 
         self.fields['title'].widget.attrs.update(
@@ -56,9 +56,10 @@ class JobForm(forms.ModelForm):
         )           
         self.fields['url'].widget.attrs.update(
             {
-                'placeholder': 'https://example.com',
+                'placeholder': 'Logo',
             }
-        )    
+        )   
+         
 
 
     class Meta:
@@ -103,15 +104,6 @@ class JobForm(forms.ModelForm):
 
 
 
-class JobApplyForm(forms.ModelForm):
-    class Meta:
-        model = Applicant
-        fields = ['job']
-
-class JobBookmarkForm(forms.ModelForm):
-    class Meta:
-        model = BookmarkJob
-        fields = ['job']
 
 
 
@@ -126,7 +118,7 @@ class JobEditForm(forms.ModelForm):
         self.fields['description'].label = "Store Description :"
         # self.fields['tags'].label = "Tags :"
         self.fields['last_date'].label = "Dead Line :"
-        self.fields['company_name'].label = "Company Name :"
+        self.fields['company_name'].label = "Branch Name :"
         self.fields['url'].label = "Website :"
 
 
