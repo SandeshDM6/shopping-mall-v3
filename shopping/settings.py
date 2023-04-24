@@ -31,7 +31,7 @@ DEBUG_TOOLBAR_CONFIG = {
     # '...
 }
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
