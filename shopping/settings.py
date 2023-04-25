@@ -99,6 +99,10 @@ DATABASES = {
         'PASSWORD': 'shopping-db',
         'HOST': 'database-1.ccvpvj32idfp.ap-southeast-1.rds.amazonaws.com',
         'PORT': '5432',
+         'OPTIONS':{ 
+            'sslmode': 'require',
+            'options': '-c timezone=UTC',
+            },
     }
 }
 
@@ -158,7 +162,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+#USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

@@ -13,6 +13,7 @@ importlib-metadata==5.0.0
 onsale==0.0.4
 packaging==21.3
 Pillow==9.5.0
+psycopg2-binary
 pyparsing==3.0.9
 pysqlite3-binary==0.5.0
 pytz==2019.3
