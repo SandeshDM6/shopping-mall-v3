@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'shopping-db',
-        'HOST': 'database-1.ccvpvj32idfp.ap-southeast-1.rds.amazonaws.com',
+        'HOST': 'database-2.ccvpvj32idfp.ap-southeast-1.rds.amazonaws.com',
         'PORT': '5432',
          'OPTIONS':{ 
             'sslmode': 'require',
